@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures | C Practice Questions</title>
+    <link rel="stylesheet" href="topic.css">
+</head>
+<body>
+    <header>
+        <h1>STRUCTURES</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="question">
+                <h5>QUESTION BANK</h5>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q1</h5>
+                <p>Create a structure of employee with emp.ID, name, and designation for 50 employees from user, and print details in tabular form.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+struct employee
+{
+    int id;
+    char name[20];
+    char design[25];
+};
+
+int main()
+{
+    struct employee emp[50];
+
+    printf("Enter details of 50 employees:\n");
+
+    for (int i = 0; i &lt; 50; i++)
+    {
+
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Enter ID: ");
+        scanf("%d", &amp;emp[i].id);
+        fflush(stdin);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+        fflush(stdin);
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].design);
+    }
+
+    printf("\n---------------------------------------------------------------\n");
+    printf("| %-5s | %-25s | %-20s |\n", "ID", "Name", "Designation");
+    printf("---------------------------------------------------------------\n");
+
+    for (int i = 0; i &lt; 50; i++)
+    {
+        printf("| %-5d | %-25s | %-20s |\n", emp[i].id, emp[i].name, emp[i].design);
+    }
+
+    printf("---------------------------------------------------------------\n");
+
+    return 0;
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter details of 50 employees:
+
+Employee 1:
+Enter ID: 101
+Enter Name: abc
+Enter Designation: abc
+
+Employee 2:
+Enter ID: 102
+Enter Name: bbb
+Enter Designation: bbb
+
+Employee 3:
+Enter ID: 103
+Enter Name: ccc
+Enter Designation: ccc
+
+Employee 4:
+Enter ID: 104
+Enter Name: ddd
+Enter Designation: ddd
+
+Employee 5:
+Enter ID: 105
+Enter Name: eee
+Enter Designation: eee           and so on...
+
+---------------------------------------------------------------
+| ID    | Name                      
+| Designation          |
+---------------------------------------------------------------
+| 101   | abc                       
+| abc                  |
+| 102   | bbb                       
+| bbb                  |
+| 103   | ccc                       
+| ccc                  |
+| 104   | ddd                       
+| ddd                  |
+| 105   | eee                       
+| eee                  |                    and so on...</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q2</h5>
+                <p>Create a structure of employee with emp.ID, name, and designation for 50 employees from user and print only the employee names.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+struct employee
+{
+    int id;
+    char name[20];
+    char design[25];
+};
+
+void main()
+{
+    struct employee emp[50];
+
+    printf("Enter details of 50 employees:\n");
+
+    for (int i = 0; i &lt; 50; i++)
+    {
+
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Enter ID: ");
+        scanf("%d", &amp;emp[i].id);
+        fflush(stdin);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+        fflush(stdin);
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].design);
+    }
+
+    
+    for (int i = 0; i &lt; 50; i++)
+    {
+        printf("\nEmployee %d. \nName - %s\n",i+1, emp[i].name );
+    }
+
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter details of 50 employees:
+
+Employee 1:
+Enter ID: 101
+Enter Name: aaa
+Enter Designation: aaa
+
+Employee 2:
+Enter ID: 102
+Enter Name: bbb
+Enter Designation: bbb
+
+Employee 3:
+Enter ID: 103
+Enter Name: ccc
+Enter Designation: ccc
+
+Employee 4:
+Enter ID: 104
+Enter Name: ddd
+Enter Designation: ddd
+
+Employee 5:
+Enter ID: 105
+Enter Name: eee
+Enter Designation: eee                   and so on..
+
+Employee 1.
+Name - aaa
+
+Employee 2.
+Name - bbb
+
+Employee 3.
+Name - ccc
+
+Employee 4.
+Name - ddd
+
+Employee 5.
+Name - eee                            and so on...</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q3</h5>
+                <p>Create a structure of employee with emp.ID, name, and designation for 50 employees from user and print name characters with emp.ID in tabular form.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+truct employee
+{
+    int id;
+    char name[20];
+    char design[25];
+};
+
+void main()
+{
+    struct employee emp[50];
+
+    printf("Enter details of 50 employees:\n");
+
+    for (int i = 0; i &lt; 50; i++)
+    {
+
+        printf("\nEmployee %d:\n", i + 1);
+        printf("Enter ID: ");
+        scanf("%d", &amp;emp[i].id);
+        fflush(stdin);
+
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name);
+        fflush(stdin);
+
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].design);
+    }
+
+    printf("\n--------------------------------------\n");
+    printf("| %-5s | %-25s  |\n", "ID", "Name" );
+    printf("------------------------------------- \n");
+
+    for (int i = 0; i &lt; 50; i++)
+    {
+        printf("| %-5d | %-25s  |\n", emp[i].id, emp[i].name);
+    }
+
+    printf("--------------------------------------\n");
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter details of 50 employees:
+
+Employee 1:
+Enter ID: 101
+Enter Name: aaa
+Enter Designation: aaa
+
+--------------------------------------
+| ID    | Name                       |
+-------------------------------------
+| 101   | aaa                        |
+--------------------------------------</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q4</h5>
+                <p>Enter student details like roll number, name, fee, and DOB and print them in ascending order of roll number.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+struct student
+{
+    int roll;
+    char name[20];
+    int fee;
+    char dob[20];
+};
+
+int main()
+{
+    struct student stu[5], temp;
+
+    printf("Enter details of 5 students:\n");
+
+    for (int i = 0; i &lt; 5; i++)
+    {
+
+        printf("\nStudent %d:\n", i + 1);
+        printf("Enterc your roll number: ");
+        scanf("%d", &amp;stu[i].roll);
+        fflush(stdin);
+
+        printf("Enter your Name: ");
+        scanf("%s", stu[i].name);
+        fflush(stdin);
+
+        printf("Enter the fees: ");
+        scanf("%d", stu[i].fee);
+        fflush(stdin);
+
+        printf("Enter the DOB: ");
+        scanf("%s", stu[i].dob);
+        fflush(stdin);
+    }
+
+    for (int i = 0; i &lt; 5 - 1; i++)
+    {
+        for (int j = i + 1; j &lt; 5; j++)
+        {
+            if (stu[i].roll &gt; stu[j].roll)
+            {
+                temp = stu[i];
+                stu[i] = stu[j];
+                stu[j] = temp;
+            }
+        }
+    }
+
+    printf("\n-------------------------------------------------------------\n");
+    printf("| %-10s | %-15s | %-10s | %-12s |\n", "Roll No", "Name", "Fee", "DOB");
+    printf("-------------------------------------------------------------\n");
+
+    for (int i = 0; i &lt; 5; i++)
+    {
+        printf("| %-10d | %-15s | %-10d | %-12s |\n",
+               stu[i].roll, stu[i].name, stu[i].fee, stu[i].dob);
+    }
+
+    printf("-------------------------------------------------------------\n");
+
+    return 0;
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter details of 5 students:
+
+Student 1:
+Enterc your roll number: 4213
+Enter your Name: s    
+Enter the fees: 10000
+Enter the DOB: 21-04-2007                  and so on... 
+
+-------------------------------------------------------------
+| Roll No    | Name            | Fee        | DOB          |
+-------------------------------------------------------------
+| 4213       | s               | 6422152    | 21-04-2007   |
+| 4444       | d               | 9505888    | 33-8-2006    |      and so on...</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer><h3><a href="index.html">Back to topics</a></h3></footer>
+</body>
+</html>

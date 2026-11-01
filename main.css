@@ -1,0 +1,62 @@
+body{
+            background-origin: padding-box;
+            background: linear-gradient(to right, #edf5f0, #cfe2d8);
+             
+        }
+    
+        header{
+            border-radius: 12px;
+             border: 2px solid #559cd6;
+            background: linear-gradient(to right, #24584f, #153b36);
+        }   
+             
+        header h1 {
+            font-family: 'Comic Sans MS', cursive;
+             color: #ffffff;
+            text-align: center;
+        }
+        header h2 {
+            font-family: 'Comic Sans MS', cursive;
+             color: #ffffff;
+            text-align: center;}
+            header h3 {
+            font-family: 'Comic Sans MS', cursive;
+             color: #ffffff;
+            text-align: center;}
+        nav
+         {
+            display: flex;
+            flex-wrap: wrap;               
+            justify-content: center;   
+            gap: 10px;                 
+            padding: 10px;
+        }
+        nav a
+        {
+            font-size: large;
+            font-family: 'Comic Sans MS', cursive;
+            display: flex;             
+            align-items: center;      
+            justify-content: center;  
+            text-align: center;       
+
+            width: 310px;             
+            height: 200px;            
+
+            border: 2px solid #d6ad55;
+            border-radius: 8px;
+            background: linear-gradient(to right, #2d8074, #176052);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        footer{
+            font-family: 'Comic Sans MS', cursive;
+            color: #fff7df;
+            flex-shrink: 0;
+            border-radius: 12px;
+            border: 2px solid #d6ad55;
+            background: linear-gradient(to right, #24584f, #153b36);
+        }
+        

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Dimension Arrays | C Practice Questions</title>
+    <link rel="stylesheet" href="topic.css">
+</head>
+<body>
+    <header>
+        <h1>MULTI-DIMENSION ARRAYS</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="question">
+                <h5>QUESTION BANK</h5>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q1</h5>
+                <p>Enter the four numbers from user and print it into matrix.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+void main() {
+    int mat[2][2], i, j;
+    printf("Enter 4 numbers: ");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++){
+            scanf("%d", &amp;mat[i][j]);
+        }
+    }
+    printf("Matrix:\n");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++){
+            printf("%d\t", mat[i][j]);
+        }
+        printf("\n");
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter 4 numbers: 1 2 3 4
+Matrix:
+1       2
+3       4</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q2</h5>
+                <p>Enter the matrix from user and transpose it.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+void main() {
+    int mat[2][2], trans[2][2], i, j;
+    printf("Enter 4 numbers for 2x2 matrix: ");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++){
+            scanf("%d",&amp;mat[i][j]);
+            trans[j][i] = mat[i][j];
+        }
+    }
+    printf("Transpose Matrix:\n");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++){
+            printf("%d\t", trans[i][j]);
+        }
+        printf("\n");
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter 4 numbers for 2x2 matrix: 1 2 3 4
+Transpose Matrix:
+1       3
+2       4</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q3</h5>
+                <p>Enter 2 matrices from user and add them.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+void main() {
+    int a[2][2], b[2][2], sum[2][2], i, j;
+    printf("Enter 4 numbers for first matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;a[i][j]);
+    printf("Enter 4 numbers for second matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;b[i][j]);
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            sum[i][j] = a[i][j] + b[i][j];
+    printf("Sum Matrix:\n");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++)
+            printf("%d\t", sum[i][j]);
+        printf("\n");
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
+Enter 4 numbers for second matrix: 1 2 3 4
+Sum Matrix:
+2       4
+6       8</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q4</h5>
+                <p>Enter 2 matrices from user and subtract them.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+void main() {
+    int a[2][2], b[2][2], sub[2][2], i, j;
+    printf("Enter 4 numbers for first matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;a[i][j]);
+    printf("Enter 4 numbers for second matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;b[i][j]);
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            sub[i][j] = a[i][j] - b[i][j];
+    printf("Subtraction Matrix:\n");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++)
+            printf("%d\t", sub[i][j]);
+        printf("\n");
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
+Enter 4 numbers for second matrix: 1 2 3 4
+Subtraction Matrix:
+0       0
+0       0</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q5</h5>
+                <p>Enter 2 matrices from user and multiply them.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+void main() {
+    int a[2][2], b[2][2], mul[2][2], i, j, k;
+    printf("Enter 4 numbers for first matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;a[i][j]);
+    printf("Enter 4 numbers for second matrix: ");
+    for(i=0;i&lt;2;i++)
+        for(j=0;j&lt;2;j++)
+            scanf("%d",&amp;b[i][j]);
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++){
+            mul[i][j]=0;
+            for(k=0;k&lt;2;k++)
+                mul[i][j] += a[i][k]*b[k][j];
+        }
+    }
+    printf("Multiplication Matrix:\n");
+    for(i=0;i&lt;2;i++){
+        for(j=0;j&lt;2;j++)
+            printf("%d\t", mul[i][j]);
+        printf("\n");
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
+Enter 4 numbers for second matrix: 1 2 3 4
+Multiplication Matrix:
+7       10
+15      22</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer><h3><a href="index.html">Back to topics</a></h3></footer>
+</body>
+</html>
