@@ -21,108 +21,185 @@
         <div class="container">
             <div class="question">
                 <h5>Q1</h5>
-                <p>Enter the four numbers from user and print it into matrix.</p>
+                <p>Enter the four numbers from the user and print it into matrix.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int mat[2][2], i, j;
-    printf("Enter 4 numbers: ");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++){
-            scanf("%d", &amp;mat[i][j]);
-        }
-    }
-    printf("Matrix:\n");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++){
-            printf("%d\t", mat[i][j]);
-        }
-        printf("\n");
-    }
+#include &lt;conio.h&gt;
+
+void main()
+{
+   int matrix[2][2],i,j;
+   clrscr();
+   printf("Enter four number seprated by space:\n");
+   for(i=0;i&lt;2;i++)
+   {
+      for(j=0;j&lt;2;j++)
+      {
+         scanf("%d",&amp;matrix[i][j]);
+      }
+   }
+   printf("\nMatrix is:\n");
+   for(i=0;i&lt;2;i++)
+   {
+      for(j=0;j&lt;2;j++)
+      {
+         printf("%d\t",matrix[i][j]);
+      }
+      printf("\n");
+   }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 numbers: 1 2 3 4
-Matrix:
-1       2
-3       4</code></pre>
+                <pre><code>Enter four number seprated by space:
+1 2 3 4
+
+Matrix is:
+1   2
+3   4</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q2</h5>
-                <p>Enter the matrix from user and transpose it.</p>
+                <p>Enter the matrix from user and transpose them.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int mat[2][2], trans[2][2], i, j;
-    printf("Enter 4 numbers for 2x2 matrix: ");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++){
-            scanf("%d",&amp;mat[i][j]);
-            trans[j][i] = mat[i][j];
-        }
-    }
-    printf("Transpose Matrix:\n");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++){
-            printf("%d\t", trans[i][j]);
-        }
-        printf("\n");
-    }
+#include &lt;conio.h&gt;
+
+void main()
+{
+   int a[10][10],transpose[10][10];
+   int r,c,i,j;
+   clrscr();
+   printf("enter number of rows: ");
+   scanf("%d",&amp;r);
+   printf("Enter number of columns: ");
+   scanf("%d",&amp;c);
+
+   printf("\nEnter elements of matrix: \n");
+   for(i=0;i&lt;r;i++)
+   {
+      for(j=0;j&lt;c;j++)
+      {
+         scanf("%d",&amp;a[i][j]);
+         transpose[j][i]=a[i][j];
+      }
+   }
+   printf("\n Original matrix:\n");
+   for(i=0;i&lt;r;i++)
+   {
+      for(j=0;j&lt;c;j++)
+      {
+         printf("%d\t",a[i][j]);
+      }
+      printf("\n");
+   }
+   printf("Transpose of Matrix:\n");
+   for(i=0;i&lt;c;i++)
+   {
+      for(j=0;j&lt;r;j++)
+      {
+         printf("%d\t",transpose[i][j]);
+      }
+      printf("\n");
+   }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 numbers for 2x2 matrix: 1 2 3 4
-Transpose Matrix:
-1       3
-2       4</code></pre>
+                <pre><code>enter number of rows: 2
+Enter number of columns: 3
+
+Enter elements of matrix:
+1 2 3
+4 5 6
+
+ Original matrix:
+1   2   3
+4   5   6
+Transpose of Matrix:
+1   4
+2   5
+3   6</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q3</h5>
-                <p>Enter 2 matrices from user and add them.</p>
+                <p>Enter 2 matrices from the user and add them.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a[2][2], b[2][2], sum[2][2], i, j;
-    printf("Enter 4 numbers for first matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;a[i][j]);
-    printf("Enter 4 numbers for second matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;b[i][j]);
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            sum[i][j] = a[i][j] + b[i][j];
-    printf("Sum Matrix:\n");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++)
-            printf("%d\t", sum[i][j]);
-        printf("\n");
-    }
+#include &lt;conio.h&gt;
+
+void main()
+{
+   int a[10][10],b[10][10],sum[10][10];
+   int row,col,i,j;
+   clrscr();
+   printf("Enter rows and columns: ");
+   scanf("%d %d",&amp;row,&amp;col);
+   printf("Enter elements of first matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("First matrix element%d %d:",i+1,j+1);
+         scanf("%d",&amp;a[i][j]);
+      }
+   }
+   printf("Enter elements of second matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("second matrix element%d %d:",i + 1,j + 1);
+         scanf("%d",&amp;b[i][j]);
+      }
+   }
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         sum[i][j]=a[i][j]+b[i][j];
+      }
+   }
+   printf("\n Sum of the two matrices: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("%d\t",sum[i][j]);
+      }
+      printf("\n");
+   }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
-Enter 4 numbers for second matrix: 1 2 3 4
-Sum Matrix:
-2       4
-6       8</code></pre>
+                <pre><code>Enter rows and columns: 2 2
+Enter elements of first matrix:
+First matrix element1 1:1
+First matrix element1 2:2
+First matrix element2 1:3
+First matrix element2 2:4
+Enter elements of second matrix:
+second matrix element1 1:5
+second matrix element1 2:6
+second matrix element2 1:7
+second matrix element2 2:8
+
+ Sum of the two matrices:
+6  8
+10 12</code></pre>
             </div>
         </div>
 
@@ -134,34 +211,68 @@ Sum Matrix:
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a[2][2], b[2][2], sub[2][2], i, j;
-    printf("Enter 4 numbers for first matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;a[i][j]);
-    printf("Enter 4 numbers for second matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;b[i][j]);
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            sub[i][j] = a[i][j] - b[i][j];
-    printf("Subtraction Matrix:\n");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++)
-            printf("%d\t", sub[i][j]);
-        printf("\n");
-    }
+#include &lt;conio.h&gt;
+
+void main()
+{
+   int a[10][10],b[10][10],sub[10][10];
+   int i,j,row,col;
+   clrscr();
+   printf("Enter rows and columns: ");
+   scanf("%d %d",&amp;row,&amp;col);
+   printf("Enter elements of first matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("a[%d][%d]= ",i,j);
+         scanf("%d",&amp;a[i][j]);
+      }
+   }
+   printf("Enter elements of second matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("b[%d][%d]= ",i,j);
+         scanf("%d",&amp;b[i][j]);
+      }
+   }
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         sub[i][j] = a[i][j]-b[i][j];
+      }
+   }
+   printf("\n result of the matrix after subtraction: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("%d\t",sub[i][j]);
+      }
+      printf("\n");
+   }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
-Enter 4 numbers for second matrix: 1 2 3 4
-Subtraction Matrix:
-0       0
-0       0</code></pre>
+                <pre><code>Enter rows and columns: 2 2
+Enter elements of first matrix:
+a[0][0]= 9
+a[0][1]= 8
+a[1][0]= 7
+a[1][1]= 6
+Enter elements of second matrix:
+b[0][0]= 1
+b[0][1]= 2
+b[1][0]= 3
+b[1][1]= 4
+
+ result of the matrix after subtraction:
+8  6
+4  2</code></pre>
             </div>
         </div>
 
@@ -173,38 +284,68 @@ Subtraction Matrix:
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a[2][2], b[2][2], mul[2][2], i, j, k;
-    printf("Enter 4 numbers for first matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;a[i][j]);
-    printf("Enter 4 numbers for second matrix: ");
-    for(i=0;i&lt;2;i++)
-        for(j=0;j&lt;2;j++)
-            scanf("%d",&amp;b[i][j]);
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++){
-            mul[i][j]=0;
-            for(k=0;k&lt;2;k++)
-                mul[i][j] += a[i][k]*b[k][j];
-        }
-    }
-    printf("Multiplication Matrix:\n");
-    for(i=0;i&lt;2;i++){
-        for(j=0;j&lt;2;j++)
-            printf("%d\t", mul[i][j]);
-        printf("\n");
-    }
+#include &lt;conio.h&gt;
+
+void main()
+{
+   int a[10][10],b[10][10],mul[10][10];
+   int i,j,row,col;
+   clrscr();
+   printf("Enter rows and columns: ");
+   scanf("%d %d",&amp;row,&amp;col);
+   printf("Enter elements of first matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("a[%d][%d]= ",i,j);
+         scanf("%d",&amp;a[i][j]);
+      }
+   }
+   printf("Enter elements of second matrix: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("b[%d][%d]= ",i,j);
+         scanf("%d",&amp;b[i][j]);
+      }
+   }
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         mul[i][j] = a[i][j]*b[i][j];
+      }
+   }
+   printf("\n result of the matrix after multiplication: \n");
+   for(i=0;i&lt;row;i++)
+   {
+      for(j=0;j&lt;col;j++)
+      {
+         printf("%d\t",mul[i][j]);
+      }
+      printf("\n");
+   }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 numbers for first matrix: 1 2 3 4
-Enter 4 numbers for second matrix: 1 2 3 4
-Multiplication Matrix:
-7       10
-15      22</code></pre>
+                <pre><code>Enter rows and columns: 2 2
+Enter elements of first matrix:
+a[0][0]= 1
+a[0][1]= 2
+a[1][0]= 3
+a[1][1]= 4
+Enter elements of second matrix:
+b[0][0]= 5
+b[0][1]= 6
+b[1][0]= 7
+b[1][1]= 8
+
+ result of the matrix after multiplication:
+5  12
+21 32</code></pre>
             </div>
         </div>
     </main>
