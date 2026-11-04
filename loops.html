@@ -83,23 +83,32 @@ divisible by prime number</code></pre>
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
 void main(){
-    int x,i,y=0;
-    printf("Enter number: ");
-    scanf("%d", &amp;x);
-    for(i=1;i&lt;=x;i++) {
-        if (x%i==0)
-            y++;
+    int num, i, f = 0;
+    printf("enter a number: ");
+    scanf("%d", &amp;num);
+
+    if (num &lt;= 1) {
+        printf("%d is not a prime number.\n", num);
+        return;
     }
-    if (y==2)
-        printf("It is a prime number");
+
+    for (i = 2; i &lt;= num / 2; i++) {
+        if (num % i == 0) {
+            f = 1;
+            break;
+        }
+    }
+
+    if (f == 0)
+        printf("%d is a prime number.\n", num);
     else
-        printf("It is not a prime number");
+        printf("%d is not a prime number.\n", num);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter number: 1
-It is not a prime number</code></pre>
+                <pre><code>enter a number: 13
+13 is a prime number.</code></pre>
             </div>
         </div>
 
@@ -142,13 +151,13 @@ void main(){
 void main(){
     int i;
     for(i=1;i&lt;=1000000;i++){
-        printf("priyanshi");
+        printf("udham");
     }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>priyanshi x1 lakh times</code></pre>
+                <pre><code>udham x1 lakh times</code></pre>
             </div>
         </div>
 
@@ -182,10 +191,10 @@ void main(){
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
 void main(){
-    int x,i;
+    int num,i;
     printf("enter a number: ");
-    scanf("%d", &amp;x);
-    for(i=1;i&lt;=x;i++){
+    scanf("%d", &amp;num);
+    for(i=1;i&lt;=num;i++){
         printf("%d\n", i);
     }
 }</code></pre>
@@ -214,10 +223,12 @@ void main(){
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
 void main(){
-    int x, i;
+    int num, i;
+    clrscr();
     printf("enter a number: ");
-    scanf("%d", &amp;x);
+    scanf("%d", &amp;num);
     for(i=1; i&lt;=100; i++){
         printf("%d\n", x);
     }
@@ -405,36 +416,38 @@ void main(){
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
 void main(){
-    int i,a;
-    for(i=1;i&lt;=20;i++){
-        a=4*i;
-        printf("4*%d=%d\n", i, a);
+    int n = 4, i;
+    clrscr();
+    for(i = 1; i &lt;= 20; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
     }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>4*1=4
-4*2=8
-4*3=12
-4*4=16
-4*5=20
-4*6=24
-4*7=28
-4*8=32
-4*9=36
-4*10=40
-4*11=44
-4*12=48
-4*13=52
-4*14=56
-4*15=60
-4*16=64
-4*17=68
-4*18=72
-4*19=76
-4*20=80</code></pre>
+                <pre><code>4 x 1 = 4
+4 x 2 = 8
+4 x 3 = 12
+4 x 4 = 16
+4 x 5 = 20
+4 x 6 = 24
+4 x 7 = 28
+4 x 8 = 32
+4 x 9 = 36
+4 x 10 = 40
+4 x 11 = 44
+4 x 12 = 48
+4 x 13 = 52
+4 x 14 = 56
+4 x 15 = 60
+4 x 16 = 64
+4 x 17 = 68
+4 x 18 = 72
+4 x 19 = 76
+4 x 20 = 80</code></pre>
             </div>
         </div>
 
@@ -446,22 +459,27 @@ void main(){
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
 void main(){
-    int x,i=0,y;
-    printf("enter a number: ");
-    scanf("%d", &amp;x);
-    while(x&gt;0){
-        y = x%10;
-        i = i*10 + y;
-        x = x/10;
+    int num, y = 0, x;
+    clrscr();
+    printf("Enter a number:");
+    scanf("%d", &amp;num);
+
+    while(num != 0){
+        x = num % 10;
+        y = y * 10 + x;
+        num /= 10;
     }
-    printf("%d", i);
+
+    printf("Reversed number: %d\n", y);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>enter a number: 123
-321</code></pre>
+                <pre><code>Enter a number: 123
+Reversed number: 321</code></pre>
             </div>
         </div>
 
@@ -473,40 +491,74 @@ void main(){
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
 void main(){
+    int choice;
+    float num1, num2, result;
     char ch;
-    int a,b;
+
     while(1){
-        printf("enter choice (1-add,2-sub,3-mul,4-div,5-mod,Q-quit): ");
+        printf("\nCHOICE:\n");
+        printf("1. Addition\n2. Subtract\n3. Multiply\n4. Division\n5. Modulo\nQ. Quit\n");
+        printf("Enter your choice: ");
         scanf(" %c", &amp;ch);
-        if(ch=='Q'||ch=='q')
+
+        if(ch == 'Q' || ch == 'q'){
+            printf("Exiting program...\n");
             break;
-        printf("enter 2 no: ");
-        scanf("%d%d", &amp;a, &amp;b);
-        if(ch=='1')
-            printf("add=%d\n", a+b);
-        else if(ch=='2')
-            printf("sub=%d\n", a-b);
-        else if(ch=='3')
-            printf("mul=%d\n", a*b);
-        else if(ch=='4')
-            printf("div=%d\n", a/b);
-        else if(ch=='5')
-            printf("mod=%d\n", a%b);
-        else
-            printf("invalid\n");
+        }
+
+        choice = ch - '0';
+
+        if(choice &gt;= 1 &amp;&amp; choice &lt;= 5){
+            printf("Enter two numbers: ");
+            scanf("%f %f", &amp;num1, &amp;num2);
+        }
+
+        switch(choice){
+            case 1:
+                result = num1 + num2;
+                printf("Addition = %.2f\n", result);
+                break;
+            case 2:
+                result = num1 - num2;
+                printf("Subtract = %.2f\n", result);
+                break;
+            case 3:
+                result = num1 * num2;
+                printf("Multiplication = %.2f\n", result);
+                break;
+            case 4:
+                if(num2 != 0)
+                    printf("Division = %.2f\n", num1 / num2);
+                else
+                    printf("Error: Division by zero not allowed\n");
+                break;
+            case 5:
+                if((int)num2 != 0)
+                    printf("Modulo = %d\n", (int)num1 % (int)num2);
+                else
+                    printf("Error: Modulo by zero not allowed\n");
+                break;
+            default:
+                printf("Invalid choice\n");
+        }
     }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>enter choice (1-add,2-sub,3-mul,4-div,5-mod,Q-quit): 1
-enter 2 no: 2 2
-add=4
-enter choice (1-add,2-sub,3-mul,4-div,5-mod,Q-quit): 5
-enter 2 no: 2 7
-mod=2
-enter choice (1-add,2-sub,3-mul,4-div,5-mod,Q-quit): q</code></pre>
+                <pre><code>CHOICE:
+1. Addition
+2. Subtract
+3. Multiply
+4. Division
+5. Modulo
+Q. Quit
+Enter your choice: 1
+Enter two numbers: 10 5
+Addition = 15.00</code></pre>
             </div>
         </div>
 
@@ -518,26 +570,31 @@ enter choice (1-add,2-sub,3-mul,4-div,5-mod,Q-quit): q</code></pre>
             <div class="answer">
                 <h5>ANSWER</h5>
                 <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
 void main(){
-    int n,r,s=0,t;
-    printf("enter no: ");
-    scanf("%d", &amp;n);
-    t=n;
-    while(n&gt;0){
-        r=n%10;
-        s=s*10+r;
-        n=n/10;
+    int num, reversed = 0, remainder, original;
+    clrscr();
+    printf("Enter a number:");
+    scanf("%d", &amp;num);
+    original = num;
+
+    while(num != 0){
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num = num / 10;
     }
-    if(t==s)
-        printf("palindrome");
+
+    if(original == reversed)
+        printf("%d is a palindrome number.\n", original);
     else
-        printf("not palindrome");
+        printf("%d is not a palindrome number.\n", original);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>enter no: 133
-not palindrome</code></pre>
+                <pre><code>Enter a number: 121
+121 is a palindrome number.</code></pre>
             </div>
         </div>
 
