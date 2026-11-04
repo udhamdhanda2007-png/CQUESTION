@@ -14,19 +14,22 @@
         <div class="container">
             <div class="question">
                 <h5>Q1</h5>
-                <p>Write a program to print the message: Today I made my first C Program.</p>
+                <p>Write a program to print the message: TODAY I MADE MY FIRST C PROGRAM.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main()
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+int main()
 {
-    printf("Today I made my first C Program.\n");
+    clrscr();
+    printf("TODAY I MADE MY FIRST C PROGRAM");
+    return(0);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Today I made my first C Program.</code></pre>
+                <pre><code>TODAY I MADE MY FIRST C PROGRAM</code></pre>
             </div>
         </div>
 
@@ -37,139 +40,165 @@ void main()
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
     char ch;
-    printf("Enter any character: ");
-    scanf("%c", &amp;ch);
-    printf("You entered: %c\n", ch);
+    clrscr();
+    printf("enter a character:");
+    scanf("%c",&amp;ch);
+    printf("print the character:%c",ch);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter any character: k
-You entered: k</code></pre>
+                <pre><code>enter a character:A
+print the character:A</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q3</h5>
-                <p>Write a program to read only 4 characters from the keyboard and display them on a separate line.</p>
+                <p>Write a program to read only 4 characters from the keyboard and display them on separate lines.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
-    char text[5];
-    printf("Enter 4 characters: ");
-    scanf("%4s", text);
-    printf("%s\n", text);
+    char ch1,ch2,ch3,ch4;
+    clrscr();
+    printf("enter four character:");
+    scanf("%c %c %c %c",&amp;ch1,&amp;ch2,&amp;ch3,&amp;ch4);
+    printf("%c\n",ch1);
+    printf("%c\n",ch2);
+    printf("%c\n",ch3);
+    printf("%c\n",ch4);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter 4 characters: CABC
-CABC</code></pre>
+                <pre><code>enter four character:a b c d
+a
+b
+c
+d</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q4</h5>
-                <p>Write a Turbo C program to print your name at the center of the first line.</p>
+                <p>Write a program to print your name at the center of the first line.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-#include &lt;conio.h&gt;
-#include &lt;string.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
-    char name[] = "Your Name";
     clrscr();
-    gotoxy((80 - strlen(name)) / 2, 1);
-    cprintf("%s", name);
-    getch();
+    printf("\t\t\t\t");
+    printf("UDHAM");
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>                 Your Name
-(Your name appears centered on the first line.)</code></pre>
+                <pre><code>                                UDHAM</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q5</h5>
-                <p>Write a program to store a single quote in a variable and print it.</p>
+                <p>Write a program to store a single quote and print that variable to show single quote on the output screen.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
-    char quote = '\'';
-    printf("%c\n", quote);
+    char ch='\'';
+    printf("the character is: %c",ch);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>'</code></pre>
+                <pre><code>the character is: '</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q6</h5>
-                <p>Write a Turbo C program to blink your name 5 times.</p>
+                <p>Write a program for printing your name on output screen but your name should blink five times.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-#include &lt;conio.h&gt;
-#include &lt;dos.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
 
 void main()
 {
-    int count;
+    int i;
     clrscr();
-    for (count = 0; count &lt; 5; count++) {
-        gotoxy(35, 12);
-        textcolor(BLINK);
-        cprintf("Your Name");
+    for(i=0;i&lt;5;i++)
+    {
+        printf("UDHAM");
         delay(500);
-        gotoxy(35, 12);
-        cprintf("         ");
+        clrscr();
         delay(500);
     }
-    textcolor(WHITE);
-    getch();
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Your Name blinks on the screen 5 times.</code></pre>
+                <pre><code>UDHAM   (appears and disappears 5 times)</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q7</h5>
-                <p>Write a Turbo C program to clear the screen, display a welcome message, and wait 5 seconds.</p>
+                <p>Write a program to print your name at the center of the first line.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-#include &lt;conio.h&gt;
-#include &lt;dos.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    clrscr();
+    printf("\t\t\t\t");
+    printf("UDHAM");
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>                                UDHAM</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q8</h5>
+                <p>Write a program to display this output.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
 
 void main()
 {
@@ -180,149 +209,216 @@ void main()
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>hello,welcome to c
-(The message remains on screen for 5 seconds.)</code></pre>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="question">
-                <h5>Q8</h5>
-                <p>Write a Turbo C program to print your name at the center of the screen.</p>
-            </div>
-            <div class="answer">
-                <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-#include &lt;conio.h&gt;
-#include &lt;string.h&gt;
-
-void main()
-{
-    char name[] = "Your Name";
-    clrscr();
-    gotoxy((80 - strlen(name)) / 2, 12);
-    cprintf("%s", name);
-    getch();
-}</code></pre>
-            </div>
-            <div class="output">
-                <h5>Output</h5>
-                <pre><code>Your Name appears at the center of the screen.</code></pre>
+                <pre><code>hello,welcome to c</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q9</h5>
-                <p>Write a Turbo C program to enter a password and display one asterisk for each character.</p>
+                <p>Write a program to print your name at the centre of the page.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-#include &lt;conio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
-    char password[21];
-    int length = 0;
-    char ch;
-
-    printf("Enter password (max 20 characters): ");
-    while ((ch = getch()) != '\r' &amp;&amp; length &lt; 20) {
-        if (ch == '\b' &amp;&amp; length &gt; 0) {
-            length--;
-            printf("\b \b");
-        } else if (ch != '\b') {
-            password[length++] = ch;
-            printf("*");
-        }
+    int i;
+    clrscr();
+    for(i=0;i&lt;5;i++)
+    {
+        printf("\n");
+        printf("                             ");
+        printf("UDHAM");
     }
-    password[length] = '\0';
-    printf("\nPassword entered.\n");
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter password (max 20 characters): ******
-Password entered.</code></pre>
+                <pre><code>                            
+                             UDHAM
+                             UDHAM
+                             UDHAM
+                             UDHAM
+                             UDHAM</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q10</h5>
-                <p>Write a program to enter two characters and print their ASCII values.</p>
+                <p>Write a program to store a single quote and print that variable to show single quote on the output screen.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
 void main()
 {
-    char first, second;
-    printf("Enter two characters: ");
-    scanf(" %c %c", &amp;first, &amp;second);
-    printf("ASCII value of %c = %d\n", first, (unsigned char) first);
-    printf("ASCII value of %c = %d\n", second, (unsigned char) second);
+    char ch='\'';
+    printf("the character is:%c",ch);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter two characters: A B
-ASCII value of A = 65
-ASCII value of B = 66</code></pre>
+                <pre><code>the character is:'</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q11</h5>
-                <p>Write a program to print all ASCII characters from 0 to 127. Control characters are shown by name.</p>
+                <p>Write a program for printing your name on output screen but your name should blink five times.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;dos.h&gt;
 
 void main()
 {
-    const char *controlNames[] = {
-        "NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",
-        "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI",
-        "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB",
-        "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US"
-    };
-    int code;
-
-    for (code = 0; code &lt;= 127; code++) {
-        printf("%3d: ", code);
-        if (code &lt; 32) {
-            printf("%s", controlNames[code]);
-        } else if (code == 127) {
-            printf("DEL");
-        } else {
-            printf("%c", code);
-        }
-        printf("\n");
+    int i;
+    clrscr();
+    for(i=0;i&lt;5;i++)
+    {
+        printf("UDHAM");
+        delay(500);
+        clrscr();
+        delay(500);
     }
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>  0: NUL
-  1: SOH
-  2: STX
+                <pre><code>UDHAM   (appears and disappears 5 times)</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q12</h5>
+                <p>Enter password, display like ******.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    char password[50];
+    int i=0;
+    char ch;
+    clrscr();
+    printf("enter password: ");
+    while(1)
+    {
+        ch=getch();
+        if(ch==13)
+        {
+            password[i]='\0';
+            break;
+        }
+        else if(ch==8)
+        {
+            if(i>0)
+            {
+                i--;
+                printf("\b \b");
+            }
+        }
+        else
+        {
+            password[i++]=ch;
+            printf("*");
+        }
+    }
+    printf("\nyour password is:%s\n",password);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>enter password: ***
+your password is:abc</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q13</h5>
+                <p>Enter two characters from the user and print the ASCII value.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    char ch,ch2;
+    clrscr();
+    printf("enter any two character :");
+    scanf("%c %c",&amp;ch,&amp;ch2);
+    printf("%d %d",ch,ch2);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>enter any two character :A B
+65 66</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q14</h5>
+                <p>Print all the ASCII characters 0 to 127.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int i;
+    printf("ASCII table (0 to 127)\n");
+    for(i=0;i&lt;128;i++)
+    {
+        if(i&lt;32||i==127)
+            printf("%3d\t non-printable\n",i);
+        else
+            printf("%3d\t%c\n",i,i);
+    }
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>ASCII table (0 to 127)
+  0	 non-printable
+  1	 non-printable
   ...
- 31: US
- 32: (space)
- 33: !
- 65: A
- 97: a
-126: ~
-127: DEL
-(The program prints every code from 0 through 127.)</code></pre>
+ 31	 non-printable
+ 32	 
+ 33	!
+ 34	"
+ ...
+ 65	A
+ 66	B
+ ...
+ 97	a
+ 98	b
+ ...
+126	~
+127	 non-printable</code></pre>
             </div>
         </div>
     </main>
+
      <footer> 
             <footer><h3><a href="index.html">Back to topics</a></h3></footer>
      </footer>

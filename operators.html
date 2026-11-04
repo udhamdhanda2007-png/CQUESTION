@@ -21,291 +21,393 @@
         <div class="container">
             <div class="question">
                 <h5>Q1</h5>
-                <p>Write a program to show an example of pre-increment.</p>
+                <p>Write a program to show example of pre-increment.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a = 5;
-    int b = ++a;
-    printf("a=%d, b=%d", a, b);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int x=5;
+    int y=++x;
+    clrscr();
+    printf("THE VALUE OF X: %d\n",x);
+    printf("THE VALUE OF Y: %d\n",y);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>a=6, b=6</code></pre>
+                <pre><code>THE VALUE OF X: 6
+THE VALUE OF Y: 6</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q2</h5>
-                <p>Write a program to show an example of post-increment.</p>
+                <p>Write a program to show example of post-increment.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a = 5;
-    int b = a++;
-    printf("a=%d, b=%d", a, b);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int x=5;
+    int y=x++;
+    clrscr();
+    printf("THE VALUE OF X: %d\n",x);
+    printf("THE VALUE OF Y: %d\n",y);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>a=6, b=5</code></pre>
+                <pre><code>THE VALUE OF X: 6
+THE VALUE OF Y: 5</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q3</h5>
-                <p>Write a program to show an example of pre-decrement.</p>
+                <p>Write a program to show example of pre-decrement.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a = 5;
-    int b = --a;
-    printf("a=%d, b=%d", a, b);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int x=5;
+    int y=--x;
+    clrscr();
+    printf("THE VALUE OF X: %d\n",x);
+    printf("THE VALUE OF Y: %d\n",y);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>a=4, b=4</code></pre>
+                <pre><code>THE VALUE OF X: 4
+THE VALUE OF Y: 4</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q4</h5>
-                <p>Write a program to show an example of post-decrement.</p>
+                <p>Write a program to show example of post-decrement.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a = 5;
-    int b = a--;
-    printf("a=%d, b=%d", a, b);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int x=5;
+    int y=x--;
+    clrscr();
+    printf("THE VALUE OF X: %d\n",x);
+    printf("THE VALUE OF Y: %d\n",y);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>a=4, b=5</code></pre>
+                <pre><code>THE VALUE OF X: 4
+THE VALUE OF Y: 5</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q5</h5>
-                <p>Write a program to enter 2 numbers from user, add, subtract, multiply, divide and find the remainder, and display the answers.</p>
+                <p>Enter two numbers from the user and add them and show the answer; again take 2 numbers, subtract them; again multiply; again divide; again find the remainder and show the answer.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int a,b;
-    printf("Enter two numbers for addition: ");
-    scanf("%d %d", &amp;a, &amp;b);
-    printf("Addition=%d\n", a+b);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
 
-    printf("Enter two numbers for subtraction: ");
-    scanf("%d %d", &amp;a, &amp;b);
-    printf("Subtraction=%d\n", a-b);
+void main()
+{
+    int num1,num2,sum;
+    clrscr();
+    printf("Enter first number:");
+    scanf("%d",&amp;num1);
+    printf("Enter second number:");
+    scanf("%d",&amp;num2);
+    sum=num1+num2;   //ADDITION.
+    printf("ADDITION %d\n",sum);
 
-    printf("Enter two numbers for multiplication: ");
-    scanf("%d %d", &amp;a, &amp;b);
-    printf("Multiplication=%d\n", a*b);
+    printf("Enter first number:");
+    scanf("%d",&amp;num1);
+    printf("Enter second number:");
+    scanf("%d",&amp;num2);
+    sum=num1-num2;   //SUBTRACTION.
+    printf("SUBTRACT %d\n",sum);
 
-    printf("Enter two numbers for division: ");
-    scanf("%d %d", &amp;a, &amp;b);
-    printf("Division=%d\n", a/b);
+    printf("Enter first number:");
+    scanf("%d",&amp;num1);
+    printf("Enter second number:");
+    scanf("%d",&amp;num2);
+    sum=num1*num2;     //MULTIPLICATION.
+    printf("MULTILPLE %d\n",sum);
 
-    printf("Enter two numbers for remainder: ");
-    scanf("%d %d", &amp;a, &amp;b);
-    printf("Remainder=%d\n", a%b);
+    printf("Enter first number:");
+    scanf("%d",&amp;num1);
+    printf("Enter second number:");
+    scanf("%d",&amp;num2);
+    sum=num1/num2;      //DIVISION.
+    printf("DIVISION %d\n",sum);
+
+    printf("Enter first number:");
+    scanf("%d",&amp;num1);
+    printf("Enter second number:");
+    scanf("%d",&amp;num2);
+    sum=num1%num2;       //REMAINDER
+    printf("REMAINDER %d\n",sum);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter two numbers for addition: 2 2
-Addition=4
-Enter two numbers for subtraction: 2 2
-Subtraction=0
-Enter two numbers for multiplication: 2 2
-Multiplication=4
-Enter two numbers for division: 2 2
-Division=1
-Enter two numbers for remainder: 2 2
-Remainder=0</code></pre>
+                <pre><code>Enter first number:10
+Enter second number:5
+ADDITION 15
+Enter first number:10
+Enter second number:5
+SUBTRACT 5
+Enter first number:10
+Enter second number:5
+MULTILPLE 50
+Enter first number:10
+Enter second number:5
+DIVISION 2
+Enter first number:10
+Enter second number:3
+REMAINDER 1</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q6</h5>
-                <p>Write a program to enter a number from the user and print the last digit of the number.</p>
+                <p>Write a program to enter a number from the user, the length of the number depends on the user, programmer should print the last digit of the number.</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
     int num;
-    printf("Enter a number: ");
-    scanf("%d", &amp;num);
-    printf("Last digit: %d", num%10);
+    clrscr();
+    printf("enter a number:");
+    scanf("%d",&amp;num);
+    printf("Last Digit : %d\n",num%10);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter a number: 12
-Last digit: 2</code></pre>
+                <pre><code>enter a number:1234
+Last Digit : 4</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q7</h5>
-                <p>Enter a decimal number from the user (float) and print the right-hand side of the decimal point.</p>
+                <p>Enter a decimal number from the user (float) and print the right hand side of the decimal point?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
     float num;
-    int rhs;
-    printf("Enter a decimal number: ");
-    scanf("%f", &amp;num);
-    rhs = (num - (int)num) * 100000;
-    printf("Right-hand side: %d", rhs);
+    int intpart,rightside;
+    float fracpart;
+    clrscr();
+    printf("Enter a Decimal number:");
+    scanf("%f",&amp;num);
+
+    intpart=(int)num;
+    fracpart=num-intpart;
+    rightside=(int)(fracpart*1000000);
+    while(rightside%10==0&amp;&amp;rightside!=0)
+       rightside/=10;
+    printf("Right-hand side of decimal point :%d\n",rightside);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter a decimal number: 2.4
-Right-hand side: 40000</code></pre>
+                <pre><code>Enter a Decimal number:12.75
+Right-hand side of decimal point :75</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q8</h5>
-                <p>Enter a number from user and find out cube of the number.</p>
+                <p>Enter a number from the user and find out the cube of the number?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &amp;num);
-    printf("Cube: %d", num*num*num);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int num,cube;
+    clrscr();
+    printf("Enter a number:");
+    scanf("%d",&amp;num);
+    cube=num*num*num;
+    printf("Cube of %d is : %d\n",num,cube);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter a number: 2
-Cube: 8</code></pre>
+                <pre><code>Enter a number:3
+Cube of 3 is : 27</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q9</h5>
-                <p>Enter float number from user and round off the number.</p>
+                <p>Enter float number from the user and round off the number?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    float num;
-    printf("Enter a float number: ");
-    scanf("%f", &amp;num);
-    printf("Rounded: %d", (int)(num + 0.5));
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+#include&lt;math.h&gt;
+
+void main()
+{
+    double num,rounded_num;
+    clrscr();
+    printf("Enter a number:");
+    scanf("%lf",&amp;num);
+    rounded_num= floor(num+0.5);
+    printf("Rounded number: %.0lf\n",rounded_num);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter a float number: 2.4
-Rounded: 2</code></pre>
+                <pre><code>Enter a number:4.6
+Rounded number: 5</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q10</h5>
-                <p>Enter a lower case character from user and print it into upper case.</p>
+                <p>Enter a lower case character from the user and print it into uppercase?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
     char ch;
-    printf("Enter a lowercase character: ");
-    scanf(" %c", &amp;ch);
-    printf("Uppercase: %c", ch-32);
+    clrscr();
+    printf("Enter a lower case character:");
+    scanf("%c",&amp;ch);
+    if(ch&gt;='a'&amp;&amp;ch&lt;='z')
+    {
+       printf("Upper case character: %c\n",ch-32);
+    }
+    else
+       printf("Invalid input.Please enter a lowercase character.\n");
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter a lowercase character: a
-Uppercase: A</code></pre>
+                <pre><code>Enter a lower case character:g
+Upper case character: G</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q11</h5>
-                <p>Enter marks of students and calculate average of the student’s marks.</p>
+                <p>Enter marks of students and calculate average of students marks?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    int n, i, marks, sum=0;
-    printf("Enter number of students: ");
-    scanf("%d", &amp;n);
-    for(i=1;i&lt;=n;i++){
-        printf("Enter marks of student %d: ", i);
-        scanf("%d", &amp;marks);
-        sum += marks;
-    }
-    printf("Average marks: %.2f", (float)sum/n);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    int marks1,marks2,marks3,marks4,marks5;
+    float avg;
+    clrscr();
+    printf("enter the marks of first subject:-");
+    scanf("%d",&amp;marks1);
+    printf("enter the marks of second subject:-");
+    scanf("%d",&amp;marks2);
+    printf("enter the marks of third subject:-");
+    scanf("%d",&amp;marks3);
+    printf("enter the marks of fourth subject:-");
+    scanf("%d",&amp;marks4);
+    printf("enter the marks of fifth subject:-");
+    scanf("%d",&amp;marks5);
+    avg=(marks1+marks2+marks3+marks4+marks5)/5.0;
+    printf(" the average is :%.2f",avg);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter number of students: 3
-Enter marks of student 1: 77
-Enter marks of student 2: 58
-Enter marks of student 3: 98
-Average marks: 77.67</code></pre>
+                <pre><code>enter the marks of first subject:-80
+enter the marks of second subject:-70
+enter the marks of third subject:-90
+enter the marks of fourth subject:-60
+enter the marks of fifth subject:-75
+ the average is :75.00</code></pre>
             </div>
         </div>
 
         <div class="container">
             <div class="question">
                 <h5>Q12</h5>
-                <p>Calculate simple interest = (P x R x T) / 100.</p>
+                <p>Calculate simple interest = (p x r x t)/100?</p>
             </div>
             <div class="answer">
                 <h5>ANSWER</h5>
-                <pre><code>#include &lt;stdio.h&gt;
-void main() {
-    float P, R, T, SI;
-    printf("Enter Principal, Rate, Time: ");
-    scanf("%f %f %f", &amp;P, &amp;R, &amp;T);
-    SI = (P*R*T)/100;
-    printf("Simple Interest: %.2f", SI);
+                <pre><code>#include&lt;stdio.h&gt;
+#include&lt;conio.h&gt;
+
+void main()
+{
+    float p,r,t,intrest;
+    clrscr();
+    printf("Enter the principal rate:");
+    scanf("%f",&amp;p);
+    printf("Enter the rate of intrest:");
+    scanf("%f",&amp;r);
+    printf("Enter the time:");
+    scanf("%f",&amp;t);
+    intrest=p*r*t/100;
+    printf("The simple intrest is: %f\n",intrest);
 }</code></pre>
             </div>
             <div class="output">
                 <h5>Output</h5>
-                <pre><code>Enter Principal, Rate, Time: 2 3 4
-Simple Interest: 0.24</code></pre>
+                <pre><code>Enter the principal rate:1000
+Enter the rate of intrest:5
+Enter the time:2
+The simple intrest is: 100.000000</code></pre>
             </div>
         </div>
     </main>

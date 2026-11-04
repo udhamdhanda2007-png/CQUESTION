@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Handling | C Practice Questions</title>
+    <link rel="stylesheet" href="topic.css">
+</head>
+<body>
+    <header>
+        <h1>FILE HANDLING</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="question">
+                <h5>QUESTION BANK</h5>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q1</h5>
+                <p>Write a program to copy the content of one file into another file.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    FILE *fp1, *fp2;
+    char ch;
+    char text[200];
+
+    fp1 = fopen("abc.txt", "w");
+    if (fp1 == NULL)
+    {
+        printf("file is not created\n");
+        exit(1);
+    }
+    printf("Enter some text: ");
+    scanf("%s", text);
+    fputs(text, fp1);
+    fclose(fp1);
+
+    fp1 = fopen("f1.txt", "r");
+    fp2 = fopen("f2.txt", "w");
+    if (fp1 == NULL || fp2 == NULL)
+    {
+        printf("Error opening file\n");
+        exit(1);
+    }
+
+    while ((ch = fgetc(fp1)) != EOF)
+    {
+        fputc(ch, fp2);
+    }
+
+    fclose(fp1);
+    fclose(fp2);
+
+    printf("File copied successfully");
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter some text: hello
+File copied successfully</code></pre>
+            </div>
+        </div>
+        <div class="container">
+            <div class="question">
+                <h5>Q2</h5>
+                <p>Write a program to create a file, write text, rename it with a new name and delete the old file.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    FILE *fp1, *fp2;
+    char oldname[10], newname[10];
+    char ch;
+
+    printf("Enter file name to create: ");
+    scanf("%s", oldname);
+
+    fp1 = fopen(oldname, "w");
+    if (fp1 == NULL)
+    {
+        printf("Cannot create file\n");
+        exit(1);
+    }
+
+    printf("Enter some text (press Enter to stop): ");
+    fflush(stdin);
+    while ((ch = getchar()) != '\n')
+    {
+        fputc(ch, fp1);
+    }
+    fclose(fp1);
+    printf("File '%s' created.\n", oldname);
+
+    printf("Enter new name for the file: ");
+    scanf("%s", newname);
+
+    fp1 = fopen(oldname, "r");
+    fp2 = fopen(newname, "w");
+    if (fp1 == NULL || fp2 == NULL)
+    {
+        printf("Error opening file\n");
+        exit(1);
+    }
+    while ((ch = fgetc(fp1)) != EOF)
+        fputc(ch, fp2);
+    fclose(fp1);
+    fclose(fp2);
+
+    if (remove(oldname) == 0)
+        printf("File renamed from '%s' to '%s' successfully.\n", oldname, newname);
+    else
+        printf("Error: old file could not be deleted.\n");
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter file name to create: abc.txt
+Enter some text (press Enter to stop): hello world
+File 'abc.txt' created.
+Enter new name for the file: def.txt
+File renamed from 'abc.txt' to 'def.txt' successfully.</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q3</h5>
+                <p>Write a program to concatenate the contents of two files into a third file.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    FILE *f1, *f2, *f3;
+    char name1[50], name2[50], name3[50];
+    char text[200];
+    char ch;
+
+    printf("Enter first file name: ");
+    scanf("%s", name1);
+    f1 = fopen(name1, "w");
+    if (f1 == NULL)
+    {
+        printf("Cannot create first file\n");
+        exit(1);
+    }
+    printf("Enter text for first file: ");
+    scanf(" %s", text);
+    fprintf(f1, "%s", text);
+    fclose(f1);
+
+    printf("Enter second file name: ");
+    scanf("%s", name2);
+    f2 = fopen(name2, "w");
+    if (f2 == NULL)
+    {
+        printf("Cannot create second file\n");
+        exit(1);
+    }
+    printf("Enter text for second file: ");
+    scanf(" %s", text);
+    fprintf(f2, "%s", text);
+    fclose(f2);
+
+    printf("Enter third file name: ");
+    scanf("%s", name3);
+    f3 = fopen(name3, "w");
+    f1 = fopen(name1, "r");
+    f2 = fopen(name2, "r");
+    if (f1 == NULL || f2 == NULL || f3 == NULL)
+    {
+        printf("Error opening file\n");
+        exit(1);
+    }
+
+    while ((ch = fgetc(f1)) != EOF)
+        fputc(ch, f3);
+    fputc('\n', f3);
+    while ((ch = fgetc(f2)) != EOF)
+        fputc(ch, f3);
+
+    fclose(f1);
+    fclose(f2);
+    fclose(f3);
+
+    printf("Files '%s' and '%s' concatenated into '%s' successfully.\n", name1, name2, name3);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter first file name: a.txt
+Enter text for first file: hello
+Enter second file name: b.txt
+Enter text for second file: world
+Enter third file name: c.txt
+Files 'a.txt' and 'b.txt' concatenated into 'c.txt' successfully.</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q4</h5>
+                <p>Write a program to count number of characters in a file.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char name[50];
+    char text[200];
+    char ch;
+    int count = 0;
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    fp = fopen(name, "w");
+    if (fp == NULL)
+    {
+        printf("Cannot create file\n");
+        exit(1);
+    }
+    printf("Enter text: ");
+    scanf(" %s", text);
+    fprintf(fp, "%s", text);
+    fclose(fp);
+
+    fp = fopen(name, "r");
+    if (fp == NULL)
+    {
+        printf("Cannot open file\n");
+        exit(1);
+    }
+    while ((ch = fgetc(fp)) != EOF)
+        count++;
+    fclose(fp);
+
+    printf("Number of characters in the file = %d\n", count);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter file name: sample.txt
+Enter text: hello
+Number of characters in the file = 5</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q5</h5>
+                <p>Write a program to count the number of words in a file.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char name[50];
+    char text[200];
+    char ch;
+    int count = 0, inword = 0;
+
+    printf("Enter file name: ");
+    scanf("%s", name);
+
+    fp = fopen(name, "w");
+    if (fp == NULL)
+    {
+        printf("Cannot create file\n");
+        exit(1);
+    }
+    printf("Enter text: ");
+    scanf(" %s, text);
+    fprintf(fp, "%s", text);
+    fclose(fp);
+
+    fp = fopen(name, "r");
+    if (fp == NULL)
+    {
+        printf("Cannot open file\n");
+        exit(1);
+    }
+    while ((ch = fgetc(fp)) != EOF)
+    {
+        if (ch == ' '   || ch == '\n')
+            inword = 0;
+        else if (inword == 0)
+        {
+            inword = 1;
+            count++;
+        }
+    }
+    fclose(fp);
+
+    printf("Number of words in the file = %d\n", count);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter file name: sample.txt
+Enter text: hello world this is c
+Number of words in the file = 5</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3><a href="index.html">Back to topics</a></h3>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion | C Practice Questions</title>
+    <link rel="stylesheet" href="topic.css">
+</head>
+<body>
+    <header>
+        <h1>RECURSION</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="question">
+                <h5>QUESTION BANK</h5>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q1</h5>
+                <p>Write a program to print 'A' using recursion.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+
+void printA(int n)
+{
+    if (n == 0)
+        return;
+    printf("A ");
+    printA(n - 1);
+}
+
+void main()
+{
+    printA(5);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>A A A A A</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q2</h5>
+                <p>Write a program to print numbers from 1 to 5 using recursion.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+
+void print(int n)
+{
+    if (n &gt; 5)
+        return;
+    printf("%d ", n);
+    print(n + 1);
+}
+
+void main()
+{
+    print(1);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>1 2 3 4 5</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q3</h5>
+                <p>Write a program to print numbers from 5 to 1 using recursion.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+
+void print(int n)
+{
+    if (n &lt; 1)
+        return;
+    printf("%d ", n);
+    print(n - 1);
+}
+
+void main()
+{
+    print(5);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>5 4 3 2 1</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q4</h5>
+                <p>Write a program to print numbers using recursion without a base condition.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+
+void print(int n)
+{
+    printf("%d\n", n);
+    print(n);
+}
+
+void main()
+{
+    print(1);
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>1
+1
+1
+1
+1
+... infinite recursion</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question">
+                <h5>Q5</h5>
+                <p>Write a program to find the factorial of a number using recursion.</p>
+            </div>
+            <div class="answer">
+                <h5>ANSWER</h5>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int fact(int n)
+{
+    if (n == 0 || n == 1)
+        return 1;
+    return n * fact(n - 1);
+}
+
+void main()
+{
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;num);
+    printf("Factorial of %d = %d\n", num, fact(num));
+}</code></pre>
+            </div>
+            <div class="output">
+                <h5>Output</h5>
+                <pre><code>Enter a number: 5
+Factorial of 5 = 120</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3><a href="index.html">Back to topics</a></h3>
+    </footer>
+</body>
+</html>
